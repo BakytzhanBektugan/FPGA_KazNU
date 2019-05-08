@@ -32,7 +32,7 @@ void setup() {
 void loop() {
   count++;
   int CO2;
-  if(count == 4)
+  if(count == 3)
   {
     digitalWrite(4, HIGH);
     delay(55000);
@@ -44,7 +44,7 @@ void loop() {
   }
   else{
     digitalWrite(4, LOW);
-    CO2 = 0;
+    //CO2 = 0;
   }
   
   digitalWrite(5, HIGH);
