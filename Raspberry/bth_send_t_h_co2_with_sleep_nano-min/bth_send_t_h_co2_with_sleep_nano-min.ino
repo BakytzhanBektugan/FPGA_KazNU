@@ -7,7 +7,7 @@ const byte smoke = A0;
 DHT dht(DHTPIN, DHT11);
 SoftwareSerial BTSerial(2, 3); // RX | TX
 String str="";
-int str_len, count = 0;
+int str_len, count = 0, CO2 = 0;
 
 void setup() {
   pinMode(A1, OUTPUT);
@@ -31,7 +31,6 @@ void setup() {
 
 void loop() {
   count++;
-  int CO2;
   if(count == 3)
   {
     digitalWrite(4, HIGH);
