@@ -1,0 +1,5 @@
+connect mb mdm                                
+rst                                          
+dow lwip_raw_apps.elf                        
+run                                          
+exit                                         

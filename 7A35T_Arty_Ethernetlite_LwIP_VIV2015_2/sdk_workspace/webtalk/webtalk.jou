@@ -1,0 +1,10 @@
+#-----------------------------------------------------------
+# Webtalk v2015.2 (64-bit)
+# SW Build 1266856 on Fri Jun 26 16:35:25 MDT 2015
+# 
+# Start of session at: Mon Aug 17 10:07:07 2015
+# Process ID: 6876
+# Log file: C:/Projects/DRC_Dev/7A35T_Arty/7A35T_Arty_Ethernetlite_LwIP_VIV2015_2/sdk_workspace/webtalk/webtalk.log
+# Journal file: C:/Projects/DRC_Dev/7A35T_Arty/7A35T_Arty_Ethernetlite_LwIP_VIV2015_2/sdk_workspace/webtalk\webtalk.jou
+#-----------------------------------------------------------
+source sdk_webtalk.tcl
