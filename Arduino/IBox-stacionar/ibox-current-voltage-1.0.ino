@@ -19,6 +19,6 @@ void loop()
   float currentDraw = emon1.Irms;        //extract Irms into Variable
   float supplyVoltage = emon1.Vrms;      //extract Vrms into Variable
 
-  Serial.println((String)"V=" + supplyVoltage + ";" + "I=" + currentDraw + ";");
+  Serial.print((String)"V=" + supplyVoltage + ";" + "I=" + currentDraw);
   delay(2000);
 }
