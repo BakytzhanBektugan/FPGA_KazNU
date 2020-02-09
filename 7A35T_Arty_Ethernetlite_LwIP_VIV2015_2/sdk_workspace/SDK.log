@@ -1,0 +1,37 @@
+10:01:22 INFO  : Launching XSDB server: xsdb.bat -s C:/Xilinx/SDK/2015.2/scripts/xsdb/xsdb/xsdb-server.tcl
+10:01:23 INFO  : Processing command line option -hwspec C:/Projects/DRC_Dev/7A35T_Arty/7A35T_Arty_Ethernetlite_LwIP_VIV2015_2/IPI/project_1/project_1.sdk/design_1_wrapper.hdf.
+10:01:23 INFO  : XSDB server has started successfully.
+10:01:54 INFO  : Saving repository preferences.
+10:01:54 INFO  : Reading in cores from local repositories: 
+		 C:\Projects\DRC_Dev\7A35T_Arty\7A35T_Arty_Ethernetlite_LwIP_VIV2015_2\sdk_repo
+10:01:54 INFO  : Cleaning BSP projects in the workspace.
+10:01:55 INFO  : Saving repository preferences.
+10:05:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:05:00 INFO  : 'targets -set -filter {jtag_cable_name =~ "Digilent Arty 210319722175A" && level==0} -index 0' command is executed.
+10:05:00 INFO  : 'fpga -state' command is executed.
+10:05:00 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+10:05:00 INFO  : Context for processor 'microblaze_0' is selected.
+10:05:01 INFO  : Processor reset is completed for 'microblaze_0'.
+10:05:01 INFO  : Context for processor 'microblaze_0' is selected.
+10:05:28 INFO  : 'dow -data C:/Projects/DRC_Dev/7A35T_Arty/7A35T_Arty_Ethernetlite_LwIP_VIV2015_2/demo/image.mfs 0x84000000' command is executed.
+10:05:29 INFO  : Context for processor 'microblaze_0' is selected.
+10:05:30 INFO  : The application 'C:/Projects/DRC_Dev/7A35T_Arty/7A35T_Arty_Ethernetlite_LwIP_VIV2015_2/sdk_workspace/lwip_raw_apps/Debug/lwip_raw_apps.elf' is downloaded to processor 'microblaze_0'.
+10:05:30 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~ "microblaze*#0" && jtag_cable_name =~ "Digilent Arty 210319722175A"} -index 0
+rst -processor
+targets -set -nocase -filter {name =~ "microblaze*#0" && jtag_cable_name =~ "Digilent Arty 210319722175A"} -index 0
+dow -data C:/Projects/DRC_Dev/7A35T_Arty/7A35T_Arty_Ethernetlite_LwIP_VIV2015_2/demo/image.mfs 0x84000000
+targets -set -nocase -filter {name =~ "microblaze*#0" && jtag_cable_name =~ "Digilent Arty 210319722175A"} -index 0
+dow C:/Projects/DRC_Dev/7A35T_Arty/7A35T_Arty_Ethernetlite_LwIP_VIV2015_2/sdk_workspace/lwip_raw_apps/Debug/lwip_raw_apps.elf
+----------------End of Script----------------
+
+10:05:31 INFO  : Context for processor 'microblaze_0' is selected.
+10:05:31 INFO  : 'con' command is executed.
+10:05:31 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "microblaze*#0" && jtag_cable_name =~ "Digilent Arty 210319722175A"} -index 0
+con
+----------------End of Script----------------
+
+10:07:06 INFO  : Disconnected from the channel tcfchan#1.
+10:07:07 ERROR : Unexpected error while parsing XMD response ?: com.google.gson.JsonSyntaxException: com.google.gson.stream.MalformedJsonException: invalid number or unquoted string near 

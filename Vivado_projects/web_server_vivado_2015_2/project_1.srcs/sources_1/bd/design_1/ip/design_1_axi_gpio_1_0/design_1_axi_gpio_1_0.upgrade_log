@@ -1,0 +1,62 @@
+Copyright 1986-2015 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2015.2 (win64) Build 1266856 Fri Jun 26 16:35:25 MDT 2015
+| Date         : Tue Sep 24 13:10:54 2019
+| Host         : DESKTOP-C8CN1EQ running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7a100tcsg324-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'design_1_axi_gpio_1_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the update of design_1_axi_gpio_1_0 (xilinx.com:ip:axi_gpio:2.0 (Rev. 7)) to current project options.
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading IP 'design_1_axi_gpio_1_0'. These changes may impact your design.
+
+
+-upgrade has added port 'gpio_io_i'
+-upgrade has added port 'gpio_io_t'
+
+3. Customization warnings
+-------------------------
+
+WARNING: An attempt to modify the value of disabled parameter 'C_ALL_OUTPUTS' from '0' to '1' has been ignored for IP '/axi_gpio_1'
+
+
+4. Debug Commands
+-----------------
+
+  The following debug information can be passed to Vivado as Tcl commands,
+in order to validate or debug the output of the upgrade flow.
+  Please consult the warnings from the previous sections, and alter or remove
+the configuration parameter(s) which caused the warning; then execute the Tcl
+commands, and use the IP Customization GUI to verify the IP configuration.
+
+create_ip -vlnv xilinx.com:ip:axi_gpio:2.0 -user_name design_1_axi_gpio_1_0
+set_property -dict "\
+  CONFIG.GPIO_BOARD_INTERFACE led_4bits \
+  CONFIG.GPIO2_BOARD_INTERFACE Custom \
+  CONFIG.C_DOUT_DEFAULT_2 0x00000000 \
+  CONFIG.USE_BOARD_FLOW true \
+  CONFIG.C_TRI_DEFAULT 0xFFFFFFFF \
+  CONFIG.C_ALL_OUTPUTS 1 \
+  CONFIG.C_IS_DUAL 0 \
+  CONFIG.C_ALL_INPUTS 0 \
+  CONFIG.C_TRI_DEFAULT_2 0xFFFFFFFF \
+  CONFIG.C_GPIO2_WIDTH 32 \
+  CONFIG.Component_Name design_1_axi_gpio_1_0 \
+  CONFIG.C_ALL_INPUTS_2 0 \
+  CONFIG.C_ALL_OUTPUTS_2 0 \
+  CONFIG.C_INTERRUPT_PRESENT 0 \
+  CONFIG.C_GPIO_WIDTH 4 \
+  CONFIG.C_DOUT_DEFAULT 0x00000000 " [get_ips design_1_axi_gpio_1_0]
+
+
