@@ -1,2 +1,2 @@
-Address = http://95.161.225.76//TestBLE/api/APIble/TreatmentData
+Address = http://95.161.225.76/TestBLE/api/APIble/TreatmentData
 json = {"NotParsed": "Device: 47, temperature: 24.16, humidity: 65, CO2_ppm: 476, Gas_MQ9: 165"}
