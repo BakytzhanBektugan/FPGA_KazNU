@@ -9,6 +9,6 @@ void setup()
 }
 void loop() 
 {
- Serial.print((String)"CO2="+gasSensor.getPPM()+";GAS_MQ2="+analogRead(A1)+";T="+dht.readTemperature()+";H="+dht.readHumidity()); // выдача в последовательный порт
+ Serial.println((String)"CO2="+gasSensor.getPPM()+";GAS_MQ2="+analogRead(A1)+";T="+dht.readTemperature()+";H="+dht.readHumidity()); // выдача в последовательный порт
  delay(10000);
 }
