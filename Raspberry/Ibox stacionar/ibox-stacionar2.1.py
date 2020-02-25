@@ -60,6 +60,6 @@ while 1:
         r = requests.post('http://95.161.225.76/TestBLE/api/APIble/TreatmentData', json={"NotParsed":strdata})
     except:
         pass
-    print(r.status_code)
+    #print(r.status_code)
     #print(time.time() - start)
     
