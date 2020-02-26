@@ -6,6 +6,7 @@ import serial.tools.list_ports as ports
 import queue
 import threading
 
+#local ip = 192.168.12.11
 
 def get_COMs():
     pts = ports.comports()
@@ -42,8 +43,16 @@ def serial_read(s):
         line = s.readline()
         queue1.put(line)
 
-threadA = threading.Thread(target=serial_read, args=(s1, ), ).start()
-threadB = threading.Thread(target=serial_read, args=(s2, ), ).start()
+
+result = True
+
+while(result):
+    try:
+        threadA = threading.Thread(target=serial_read, args=(s1, ), ).start()
+        threadB = threading.Thread(target=serial_read, args=(s2, ), ).start()
+        result = False
+    except:
+        result = True
 
 while 1:
     #start = time.time()
@@ -55,8 +64,7 @@ while 1:
             sensordict.update(convert(l[i].split("=")))
     
     try:
-        strdata = "Device: 50, "
-        strdata += "temperature: " + sensordict["T"] + ", humidity: " + sensordict["H"] + ", CO2_ppm: " + sensordict["CO2"] + ", Gas_MQ2: " + sensordict["GAS_MQ2"] + ", Current: " + sensordict["I"] + ", Voltage: " + sensordict["V"]
+        strdata = "Device: 50, temperature: " + sensordict["T"] + ", humidity: " + sensordict["H"] + ", CO2_ppm: " + sensordict["CO2"] + ", Gas_MQ2: " + sensordict["GAS_MQ2"] + ", Current: " + sensordict["I"] + ", Voltage: " + sensordict["V"] + ";"
         r = requests.post('http://95.161.225.76/TestBLE/api/APIble/TreatmentData', json={"NotParsed":strdata})
     except:
         pass

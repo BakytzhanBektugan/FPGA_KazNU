@@ -1,10 +1,12 @@
 [Unit]
 Description=My Sample Service
-After=multi-user.target
+After=network.target
 
 [Service]
-Type=idle
-ExecStart=/usr/bin/python3 /home/pi/Documents/Ibox-stacionar/ibox-stacionar.py
+ExecStart=/usr/bin/python3 -u main.py
+WorkingDirectory=/home/pi/myscript
+Restart=always
+User=pi
 
 [Install]
 WantedBy=multi-user.target
