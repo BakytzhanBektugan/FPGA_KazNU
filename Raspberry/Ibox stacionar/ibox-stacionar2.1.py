@@ -39,20 +39,17 @@ def convert(lst):
 
 
 def serial_read(s):
-    while 1:
-        line = s.readline()
-        queue1.put(line)
+    while True:
+        try:
+            line = s.readline()
+            queue1.put(line)
+        except:
+            pass
 
 
-result = True
+threadA = threading.Thread(target=serial_read, args=(s1, ), ).start()
+threadB = threading.Thread(target=serial_read, args=(s2, ), ).start()
 
-while(result):
-    try:
-        threadA = threading.Thread(target=serial_read, args=(s1, ), ).start()
-        threadB = threading.Thread(target=serial_read, args=(s2, ), ).start()
-        result = False
-    except:
-        result = True
 
 while 1:
     #start = time.time()
